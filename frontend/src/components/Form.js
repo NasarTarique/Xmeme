@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+// Component for Adding Memes to 
 function Form(props) {
   const [formdata, setFormdata] = useState({
     name: "",

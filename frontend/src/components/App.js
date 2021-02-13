@@ -44,21 +44,3 @@ function App() {
 export default App;
 const container = document.getElementById("app");
 render(<App />, container);
-
-
-
-
-
-
-
-
-
-//		const memes = posts.posts.map(elem=>{
-//			<div className="meme" key={elem.id}>
-//					<h3><span><i className="fas fa-user"></i></span>elem.name</h3>
-//					<p>{elem.caption}</p>
-//					<div className="img-container">
-//							<img src="{elem.url}" alt="" />
-//					</div>
-//			</div>
-//		})

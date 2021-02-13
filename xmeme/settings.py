@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = '&6j8annz6@_#&p%3jsj_b_^v3foghcutulqxstf09#f+9$zyp1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -57,7 +58,9 @@ ROOT_URLCONF = 'xmeme.urls'
 
 REST_FRAMEWORK  = {
     'DEFAULT_AUTHENTICATION_CLASSES': 
-    ('knox.auth.TokenAuthentication',)
+    ('knox.auth.TokenAuthentication',),
+    'DEFAULT_RENDERER_CLASSES':
+    ('rest_framework.renderers.JSONRenderer',)
 }
 TEMPLATES = [
     {
@@ -131,3 +134,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

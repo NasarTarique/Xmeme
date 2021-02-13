@@ -12,7 +12,7 @@ class MemesViewset(viewsets.ModelViewSet):
         permissions.AllowAny
     ]
     serializer_class = MemeSerializer
-
+    # overriding the create method to return only id as response instead of the entire data
     def create(self, request):
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():

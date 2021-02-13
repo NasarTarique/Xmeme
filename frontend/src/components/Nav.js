@@ -1,5 +1,6 @@
 import React from "react"
 
+// Component for Nav bar
 
 function Nav(){
 		
