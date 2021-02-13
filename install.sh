@@ -6,6 +6,7 @@ username="hp"
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
+sudo apt install -y python3-pip
 pip3 install -r requirements.txt
 
 sudo apt-get install -y postgresql postgresql-contrib
