@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-// Component for Adding Memes to 
+// Component for Adding Memes to
 function Form(props) {
   const [formdata, setFormdata] = useState({
+    id: 0,
     name: "",
     url: "",
     caption: "",
@@ -25,8 +26,13 @@ function Form(props) {
       })
       .then((data) => {
         if (data != "error") {
-          props.updateposts([formdata,...props.memes]);
+          const meme = {
+            ...formdata,
+            id: data.id,
+          };
+          props.updateposts([meme, ...props.memes]);
           setFormdata({
+            id: "",
             name: "",
             url: "",
             caption: "",

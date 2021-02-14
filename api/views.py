@@ -7,7 +7,7 @@ from .models import Memes
 # Create your views here.
 
 class MemesViewset(viewsets.ModelViewSet):
-    queryset = Memes.objects.all().order_by('-id')[:100]
+    queryset = Memes.objects.all().order_by('-id')
     permissions = [
         permissions.AllowAny
     ]
